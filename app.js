@@ -1,5 +1,6 @@
 const express = require("express");
 const { backdata, logdetail } = require("./mongo");
+const port = process.env.PORT || 8000;
 
 
 const cors = require("cors");
@@ -171,16 +172,8 @@ app.get("/patients", async (req, res) => {
     }
 });
 
-//   app.get("/", async (req, res) => {
-//     try {
-//         const log = await logdetail.find();
-//         res.json(log);
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).json({ error: "Internal Server Error" });
-//     }
-// });
 
-app.listen(8000, () => {
+
+app.listen(port, () => {
     console.log("port connected");
 });
