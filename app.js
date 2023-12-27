@@ -87,7 +87,7 @@ app.post("/add", async (req, res) => {
         } else {
             const result = await backdata.create(data);
             console.log(result);
-            res.json("notexist");
+            res.json("ADDED");
         }
     } catch (e) {
         console.error(e);
